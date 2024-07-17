@@ -36,6 +36,9 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(_dirname, "forntend", "dist", "index.html"));
 });
 
+console.log(path.join(_dirname, "/frontend/dist"));
+console.log(path.join(_dirname, "frontend", "dist", "index.html"));
+
 app.use("*", (req, res, next) => {
   const message = `Can't find this ${req.originalUrl} url on this server!`;
   next(new APPError(message, 404));
