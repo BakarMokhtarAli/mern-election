@@ -1,0 +1,11 @@
+export { Home } from "./Home";
+export { VoterLogin } from "./VoterLogin";
+export { VoterSignUp } from "./VoterSignUp";
+export { VerifyVoter } from "./VerifyVoter";
+export { VoterProfile } from "./VoterProfile";
+export { VoterDashboard } from "./VoterDashboard";
+export { Vote } from "./Vote";
+export { Voters } from "./Voters";
+export { AllCandidates } from "./AllCandidates";
+export { UpdateMyPassword } from "./UpdateMyPassword";
+export { UpdateMe } from "./UpdateMe";

@@ -1,0 +1,9 @@
+export { CandidateHome } from "./CandidateHome";
+export { CandidateLogin } from "./CandidateLogin";
+export { CandidateList } from "./CandidateList";
+export { VerifyCandidate } from "./VerifyCandidate";
+export { AllVotesList } from "./AllVotesList";
+export { VotersList } from "./VotersList";
+export { CandidateProfile } from "./CandidateProfile";
+export { UpdateCandidateProfile } from "./UpdateCandidateProfile";
+export { UpdateCandidatePassword } from "./UpdateCandidatePassword";
