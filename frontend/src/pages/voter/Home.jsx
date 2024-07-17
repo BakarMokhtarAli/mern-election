@@ -18,7 +18,7 @@ export const Home = () => {
   console.log(data);
   useEffect(() => {
     if (currentUser) {
-      navigate("/dasshboard");
+      navigate("/dashboard");
     }
   }, []);
   return (
