@@ -25,7 +25,7 @@ export const SideBar = () => {
   } = useGetSingleVoterQuery(currentUser?._id, {
     // skip: !voterId, // Skip query if voterId is not available
   });
-  // console.log(voter);
+  console.log(voter);
   const handleLogOut = async () => {
     try {
       await logOutVoter().unwrap();

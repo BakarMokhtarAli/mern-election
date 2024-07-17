@@ -16,9 +16,17 @@ export const VoterDashboard = () => {
   const navigate = useNavigate();
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   const { data, refetch } = useGetSingleVoterQuery(currentUser?._id);
+  console.log(data);
+  if (data?.voter.role == "admin") {
+    navigate("/admin");
+    console.log(true);
+  }
   useEffect(() => {
-    if (data?.voter.role !== "voter") {
+    if (data?.voter.role == "voter") {
       navigate("/admin");
+      console.log(true);
+    } else {
+      console.log(false);
     }
   }, []);
   useTitle("Voter");

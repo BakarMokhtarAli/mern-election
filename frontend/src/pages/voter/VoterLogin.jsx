@@ -36,13 +36,11 @@ export const VoterLogin = () => {
 
     try {
       const { data } = await axios.post("/api/v1/auth/signin", formData);
-
+      console.log(data);
       const { _id, role } = data.voter;
       console.log(role);
-      if (role === "admin") {
+      if (role != "voter") {
         navigate("/admin");
-      } else if (role === "lead") {
-        navigate("admin");
       } else {
         navigate("/dashboard");
       }

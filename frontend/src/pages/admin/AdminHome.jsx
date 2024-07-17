@@ -14,13 +14,14 @@ export const AdminHome = () => {
   // }, []);
   useTitle("Admin");
   const { data, refetch } = useGetSingleVoterQuery(currentUser?._id);
+
   console.log(data);
-  useEffect(() => {
-    refetch();
-    if (data?.voter.role === "voter") {
-      navigate("/dashboard");
-    }
-  }, []);
+  // useEffect(() => {
+  //   refetch();
+  //   if (data?.voter.role === "voter") {
+  //     navigate("/dashboard");
+  //   }
+  // }, []);
   return (
     <div>
       <SideBar />

@@ -16,6 +16,7 @@ app.use(express.json());
 
 const corsOptions = {
   origin: "https://mern-election.onrender.com", // Origin saxda ah ee aad rabto inaad ka ogolaato
+  // origin: "http://localhost:5173", // Origin saxda ah ee aad rabto inaad ka ogolaato
   credentials: true, // Hubi in credentials-ka la ogolaado
 };
 
