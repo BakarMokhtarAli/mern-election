@@ -85,7 +85,7 @@ export const Voters = () => {
                 voter={votersVote?.vote.candidate}
                 openDeleteModal={() => handleOpneDeleteModal(votersVote?.vote)}
                 showButtons={false}
-                // showDeleteButton={false}
+                showDeleteButton={true}
               />
             </tbody>
           </table>
