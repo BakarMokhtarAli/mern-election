@@ -33,7 +33,7 @@ app.get("/test-error", (req, res, next) => {
 // under right routes important
 app.use(express.static(path.join(_dirname, "/frontend/dist")));
 app.get("*", (req, res) => {
-  res.sendFile(path.join(_dirname, "forntend", "dist", "index.html"));
+  res.sendFile(path.join(_dirname, "frontend", "dist", "index.html"));
 });
 
 console.log(path.join(_dirname, "/frontend/dist"));
