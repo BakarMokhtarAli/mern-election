@@ -22,7 +22,7 @@ export const VoterDashboard = () => {
     console.log(true);
   }
   useEffect(() => {
-    if (data?.voter.role == "voter") {
+    if (currentUser?.role !== "voter") {
       navigate("/admin");
       console.log(true);
     } else {

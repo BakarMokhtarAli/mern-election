@@ -95,15 +95,15 @@ export const SideBar = () => {
             {/* Actions section */}
             <div className="mt-4">
               <h6 className="text-blue-600 text-sm font-bold px-4">Actions</h6>
-              <li className="list-none">
+              {/* <li className="list-none">
                 {/* Link to Profile */}
-                <Link
-                  to="/candidates"
-                  className="text-black hover:text-blue-600 text-[15px] block hover:bg-blue-50 rounded px-4 py-2.5 transition-all"
-                >
-                  vote
-                </Link>
-              </li>
+              <Link
+                to="/candidates"
+                className="text-black hover:text-blue-600 text-[15px] block hover:bg-blue-50 rounded px-4 py-2.5 transition-all"
+              >
+                vote
+              </Link>
+              {/* </li> */}
               <ul className="mt-2">
                 <li>
                   {/* Link to Logout */}

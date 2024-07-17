@@ -7,21 +7,18 @@ import { useTitle } from "../../Hooks/useTitle";
 export const AdminHome = () => {
   const navigate = useNavigate();
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-  // useEffect(() => {
-  //   if (currentUser?.role == "voter") {
-  //     navigate("/dashboard");
-  //   }
-  // }, []);
   useTitle("Admin");
   const { data, refetch } = useGetSingleVoterQuery(currentUser?._id);
 
   console.log(data);
-  // useEffect(() => {
-  //   refetch();
-  //   if (data?.voter.role === "voter") {
-  //     navigate("/dashboard");
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (currentUser?.role == "voter") {
+      navigate("/dashboard");
+      console.log(true);
+    } else {
+      console.log(false);
+    }
+  }, []);
   return (
     <div>
       <SideBar />

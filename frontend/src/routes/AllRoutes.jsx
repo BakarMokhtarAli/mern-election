@@ -44,6 +44,7 @@ import {
 import ForgotPassword from "../utils/ForgotPassword";
 import ResetPassword from "../utils/ResetPassword";
 import { PrivateRoutes } from "./PrivateRoutes";
+import { NotFoundPage } from "../utils";
 export const AllRoutes = () => {
   return (
     <div>
@@ -264,7 +265,7 @@ export const AllRoutes = () => {
             </PrivateRoutes>
           }
         />
-        {/* <Route path="/dashboard" element={<VoterDashboard />} /> */}
+        <Route path="*" element={<NotFoundPage />} />
 
         {/* voter routes ends here */}
       </Routes>

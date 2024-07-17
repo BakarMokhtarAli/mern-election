@@ -1,5 +1,6 @@
 import toast from "react-hot-toast";
-import { SideBar, Footer, VoterCard } from "../../components/admin";
+import { SideBar, Footer } from "../../components/voter";
+import { VoterCard } from "../../components/candidate";
 import { useGetVotersQuery } from "../../store/api/VoterSlice";
 import { useGetVotersVoteQuery } from "../../store/api/VoteSlice";
 import { Loading } from "../../utils";
@@ -84,7 +85,7 @@ export const Voters = () => {
                 voter={votersVote?.vote.candidate}
                 openDeleteModal={() => handleOpneDeleteModal(votersVote?.vote)}
                 showButtons={false}
-                showDeleteButton={true}
+                // showDeleteButton={false}
               />
             </tbody>
           </table>
