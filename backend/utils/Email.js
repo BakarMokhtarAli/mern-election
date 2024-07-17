@@ -16,7 +16,7 @@ export const sendVerificationEmail = async (userEmail, verificationCode) => {
 };
 
 export const sendPasswordResetEmail = async (user, resetToken) => {
-  const resetURL = `https://mongo-election.onrender.com/reset-password/${resetToken}`;
+  const resetURL = `https://mern-election.onrender.com/reset-password/${resetToken}`;
   //   const resetURL = `https://your-frontend-service.onrender.com/reset-password/${resetToken}`;
 
   const mailOptions = {
