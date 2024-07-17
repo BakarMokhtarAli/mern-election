@@ -39,15 +39,17 @@ export const VoterLogin = () => {
 
       const { _id, role } = data.voter;
       console.log(role);
-      if (role === "admin" || role === "lead") {
+      if (role === "admin") {
         navigate("/admin");
+      } else if (role === "lead") {
+        navigate("admin");
+      } else {
+        navigate("/dashboard");
       }
 
       toast.success(data.message);
       dispatch(logInSuccess({ _id, role }));
       // console.log(dispatch(logInSuccess()));
-
-      navigate("/dashboard");
     } catch (error) {
       dispatch(loginFailure(error));
       toast.error(error.response ? error.response.data.message : error.message);
