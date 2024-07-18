@@ -3,12 +3,7 @@ import React from "react";
 import { FaUserEdit } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useDeActiveVoterMutation } from "../../store/api/AdminSlice";
-export const VoterCard = ({
-  voter,
-  openModal,
-  openDeleteModal,
-  showDeleteButton,
-}) => {
+export const VoterCard = ({ voter, openDeleteVoteModal, showDeleteButton }) => {
   // console.log(activateMessage);
 
   return (
@@ -28,7 +23,7 @@ export const VoterCard = ({
         {showDeleteButton && (
           <td className="px-6 py-4 text-2xl text-blue-600 whitespace-no-wrap border-b border-gray-200">
             <i
-              onClick={openDeleteModal}
+              onClick={openDeleteVoteModal}
               className="bi bi-trash3-fill text-xl text-red-600 hover:text-red-500 cursor-pointer"
             ></i>
           </td>

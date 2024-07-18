@@ -13,14 +13,6 @@ export const CandidateCard = ({
   // console.log(candidate);
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
-  // const { data, refetch } = useGetSingleVoterQuery(
-  //   currentUser?._id || currentUser,
-  //   {
-  //     skip: !currentUser._id,
-  //   }
-  // );
-  // console.log(data);
-
   // Function to check if the current user has voted for the candidate
   const hasVoted = candidate.all_votes.some(
     (vote) => vote.voter._id === currentUser._id

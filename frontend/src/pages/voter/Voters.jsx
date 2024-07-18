@@ -9,7 +9,11 @@ import { Home } from "../voter";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { PopUpModal } from "../../utils/PopUpModal";
-import { openDeleteModal, openModal } from "../../store/redux/AlertModal";
+import {
+  openDeleteModal,
+  openDeleteVoteModal,
+  openModal,
+} from "../../store/redux/AlertModal";
 import { useTitle } from "../../Hooks/useTitle";
 
 export const Voters = () => {
@@ -23,7 +27,7 @@ export const Voters = () => {
     refetchVotersVote();
   }, []);
   useTitle("your vote");
-  const { deleteModal } = useSelector((state) => state.alert);
+  const { deleteModal, openDeleteVote } = useSelector((state) => state.alert);
 
   // console.log(votersVote?.vote.candidate.FullName);
 
@@ -31,6 +35,10 @@ export const Voters = () => {
 
   const handleOpneDeleteModal = (voter) => {
     dispatch(openDeleteModal(voter));
+  };
+  console.log(openDeleteVote);
+  const handleOpenDeleteVoteModal = (voter) => {
+    dispatch(openDeleteVoteModal(voter));
   };
 
   if (isLoading)
@@ -40,13 +48,6 @@ export const Voters = () => {
         <Loading />
       </div>
     );
-  // if (error)
-  //   return (
-  //     <div>
-  //       {toast.error("something went very wrong")}
-  //       <Home />
-  //     </div>
-  //   );
   const deleteVoteMessage = "Are you sure you want to delete this vote";
   return (
     <>
@@ -59,7 +60,7 @@ export const Voters = () => {
         </span>
       </h1>
 
-      {deleteModal && <PopUpModal deleteVoteMessage={deleteVoteMessage} />}
+      {openDeleteVote && <PopUpModal deleteVoteMessage={deleteVoteMessage} />}
       <div className="flex justify-between md:gap-5">
         <SideBar />
         {/* {isLoading && <Loading />} */}
@@ -83,7 +84,9 @@ export const Voters = () => {
               <VoterCard
                 key={votersVote?.vote._id}
                 voter={votersVote?.vote.candidate}
-                openDeleteModal={() => handleOpneDeleteModal(votersVote?.vote)}
+                openDeleteVoteModal={() =>
+                  handleOpenDeleteVoteModal(votersVote?.vote)
+                }
                 showButtons={false}
                 showDeleteButton={true}
               />

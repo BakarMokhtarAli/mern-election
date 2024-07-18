@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { closeModal, closeDeleteModal } from "../store/redux/AlertModal";
+import {
+  closeModal,
+  closeDeleteModal,
+  closeDeleteVoteModal,
+} from "../store/redux/AlertModal";
 import {
   useActivateVoterMutation,
   useChangeToAdminMutation,
@@ -59,6 +63,7 @@ export const PopUpModal = ({
     dispatch(closeDeleteModal());
     dispatch(closeVoteModal());
     dispatch(closeDeleteCandidateModal());
+    dispatch(closeDeleteVoteModal());
   };
 
   const [DeActiveVoter] = useDeActiveVoterMutation();

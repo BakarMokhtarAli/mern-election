@@ -1,7 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const BASE_URL = "https://mern-election.onrender.com/api/v1";
-// const BASE_URL = "http://localhost:5173/api/v1";
 
 const votes = createApi({
   reducerPath: "votes",

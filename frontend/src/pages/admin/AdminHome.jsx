@@ -10,7 +10,6 @@ export const AdminHome = () => {
   useTitle("Admin");
   const { data, refetch } = useGetSingleVoterQuery(currentUser?._id);
 
-  console.log(data);
   useEffect(() => {
     if (currentUser?.role == "voter") {
       navigate("/dashboard");
