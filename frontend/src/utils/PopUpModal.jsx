@@ -176,6 +176,7 @@ export const PopUpModal = ({
     } finally {
       setLoading(false);
       dispatch(closeVoteModal());
+      dispatch(closeDeleteVoteModal());
     }
   };
 
